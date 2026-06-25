@@ -1,0 +1,23 @@
+[
+  {
+    "id": "client-research-agent",
+    "name": "Client Research Agent",
+    "description": "Summarizes public market and customer research for a client workspace.",
+    "tools": ["web_search_reference", "document_summary"],
+    "approvalRequiredFor": ["external_message_send"]
+  },
+  {
+    "id": "support-draft-agent",
+    "name": "Support Draft Agent",
+    "description": "Drafts support responses using approved knowledge sources.",
+    "tools": ["knowledge_lookup", "draft_response"],
+    "approvalRequiredFor": ["customer_reply"]
+  },
+  {
+    "id": "workflow-ops-agent",
+    "name": "Workflow Operations Agent",
+    "description": "Monitors failed workflow runs and recommends remediation steps.",
+    "tools": ["run_log_lookup", "incident_summary"],
+    "approvalRequiredFor": ["retry_workflow"]
+  }
+]

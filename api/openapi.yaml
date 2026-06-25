@@ -1,0 +1,86 @@
+openapi: 3.1.0
+info:
+  title: BuildAI Showcase API
+  version: 0.1.0
+  description: Sanitized reference API for a governed AI agent platform.
+servers:
+  - url: https://api.example.com/v1
+paths:
+  /workspaces:
+    post:
+      summary: Create workspace
+      responses:
+        "201":
+          description: Workspace created
+  /workspaces/{workspaceId}/agents:
+    get:
+      summary: List agents
+      parameters:
+        - $ref: "#/components/parameters/WorkspaceId"
+      responses:
+        "200":
+          description: Agent list
+    post:
+      summary: Create agent
+      parameters:
+        - $ref: "#/components/parameters/WorkspaceId"
+      responses:
+        "201":
+          description: Agent created
+  /workspaces/{workspaceId}/workflows/{workflowId}/runs:
+    post:
+      summary: Start workflow run
+      parameters:
+        - $ref: "#/components/parameters/WorkspaceId"
+        - name: workflowId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "202":
+          description: Run queued
+  /workspaces/{workspaceId}/runs/{runId}:
+    get:
+      summary: Get run status and logs
+      parameters:
+        - $ref: "#/components/parameters/WorkspaceId"
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Run detail
+  /workspaces/{workspaceId}/approvals/{approvalId}:
+    post:
+      summary: Approve or reject pending action
+      parameters:
+        - $ref: "#/components/parameters/WorkspaceId"
+        - name: approvalId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Approval decision recorded
+components:
+  parameters:
+    WorkspaceId:
+      name: workspaceId
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        requestId:
+          type: string

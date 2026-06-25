@@ -1,0 +1,20 @@
+name: Content Check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for obvious secrets
+        run: |
+          ! grep -RInE --exclude-dir=.git 'sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9_]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH|EC|PRIVATE) KEY-----' .
+      - name: Check required files
+        run: |
+          test -f README.md
+          test -f docs/prd.md
+          test -f api/openapi.yaml

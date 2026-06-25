@@ -1,0 +1,18 @@
+[
+  {
+    "runId": "run_demo_001",
+    "workflow": "Weekly client research",
+    "status": "awaiting_approval",
+    "agent": "Client Research Agent",
+    "costCents": 42,
+    "durationSeconds": 31
+  },
+  {
+    "runId": "run_demo_002",
+    "workflow": "Support response draft",
+    "status": "succeeded",
+    "agent": "Support Draft Agent",
+    "costCents": 11,
+    "durationSeconds": 8
+  }
+]
