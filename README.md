@@ -2,9 +2,24 @@
 
 Status: public sanitized showcase.
 
+Last updated: 11 August 2026.
+
 > Public sanitized showcase version based on real product experience.
 
 BuildAI is presented here as a governed AI agent platform for individuals, teams, agencies, enterprises, and partners. This repository demonstrates product strategy, platform architecture, API design, governance patterns, and delivery thinking without exposing private production code, secrets, customer data, or proprietary implementation details.
+
+## Latest Product Evidence
+
+The current BuildAI product work has expanded the platform from agent configuration and workflow execution into a more explicit trust, evaluation, and delivery control plane:
+
+- **Governed execution evidence:** run contracts, append-only execution events, approval state, authorised-tool decisions, cost provenance, latency, and recorded outcomes are visible at the run boundary.
+- **Evaluation scorecards:** versioned suites expose evaluator, sample size, dataset version, prompt/configuration version, model, and code provenance so missing evidence stays visible instead of being inferred.
+- **Release gates and detectors:** deployments surface incomplete, stale, failed, or blocked evaluation state before publication; time-bound gate overrides are explicit and auditable.
+- **Enterprise routing controls:** budget and model-routing controls connect platform policy to deployment decisions without hiding provider or configuration failures.
+- **Deployment surfaces:** share links, website widgets, APIs, and a future self-hosted target are represented with logs, versioning, approvals, and rollback-oriented release thinking.
+- **CLI and capability contracts:** authentication and deployment control gates are documented as explicit capabilities, preserving compatibility across the delivery surface.
+
+These updates are reflected as sanitized product and architecture patterns in this repository. The latest implementation remains in the private product checkouts; this showcase does not claim that every provider, credential, worker, or deployment path is enabled for every workspace.
 
 ## What This Shows
 
@@ -45,6 +60,7 @@ flowchart LR
 docs/
   prd.md
   architecture.md
+  latest-updates.md
   security.md
   roadmap.md
   demo-scripts.md
