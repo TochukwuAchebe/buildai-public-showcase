@@ -1,8 +1,6 @@
 # BuildAI Public Showcase
 
-Status: public sanitized showcase.
-
-> Public sanitized showcase version based on real product experience.
+This public showcase contains sample workflows and architecture for BuildAI. The current product and documentation are at [buildmyagent.app](https://buildmyagent.app).
 
 BuildAI is presented here as a governed AI agent platform for individuals, teams, agencies, enterprises, and partners. This repository demonstrates product strategy, platform architecture, API design, governance patterns, and delivery thinking without exposing private production code, secrets, customer data, or proprietary implementation details.
 
